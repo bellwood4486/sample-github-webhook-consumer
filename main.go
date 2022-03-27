@@ -57,9 +57,5 @@ func main() {
 		fmt.Printf("sha1: %v\n", validMACSHA1(body, []byte(hmacsha1)))
 	})
 
-	http.HandleFunc("/twitter", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Println("called from twitter")
-		printHeader(r)
-	})
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
